@@ -36,7 +36,7 @@ This will run the ElectronJS App natively on your laptop. The app is bootstrappe
 
 Create your own `.env` file with the respective API keys so that when we push to GitHub it isn't revealed. 
 
-#IMPORTANT
+# IMPORTANT
 
 Create your own branch if you are working on it don't push directly to main branch or it will mess it up
 
