@@ -43,10 +43,10 @@ Create your own branch if you are working on it don't push directly to main bran
 
 ## FILES
 
-`index.js` managing the routing system/what is being displayed
-`electron.js` is in the `public` directory and is handling displaying the ElectronJS app
-`App.js` is in the `src` directory and is displaying the start page info (eg. Start your day right page)
-`Main.js` is in the `src/screens` directory and is the main page with the text editor and the AI assistant and is in 
+- `index.js` managing the routing system/what is being displayed
+- `electron.js` is in the `public` directory and is handling displaying the ElectronJS app
+- `App.js` is in the `src` directory and is displaying the start page info (eg. Start your day right page)
+- `Main.js` is in the `src/screens` directory and is the main page with the text editor and the AI assistant and is in 
 
 
 
