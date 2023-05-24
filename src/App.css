@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+.title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7.5%;
+  background-color: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body {
+  overflow: auto;
+  background-color: #def6ff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+}
+
+.title {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  margin-top: 7.5%;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #0080ff;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.title.fade-in {
+  opacity: 1;
+}
+
+.subheader {
+  opacity: 0;
+  transition: opacity 2s ease-in-out 2s;
+  margin-top: -3.5%;
+  font-size: 1.25em;
+  text-align: center;
+  color: #36cdff;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.subheader.fade-in {
+  opacity: 1;
+}
+
+.custom-input {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-top: 30px;
+}
+
+.input-box {
+  border: 1px solid #ccc;
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 25vw;
+  background-color: #0080ff;
+}
+
+.input-box:focus-within {
+  background-color: white;
+}
+
+.input-box input[type="text"] {
+  border-color: transparent;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.input-box input[type="text"]:focus {
+  color: black;
+}
+
+.input-box input[type="text"]:not(:focus) {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input-box:focus-within input[type="text"]::placeholder {
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-box input[type="text"]::placeholder {
+  color: white;
+}
+
+.add-button {
+  background-color: transparent !important;
+  border: none;
+  outline: none;
+  margin-top: 0.5%;
+}
+
+.add-icon {
+  font-size: 1.5vw;
+}
+
+.delete-button {
+  background-color: transparent !important;
+  border: none;
+  outline: none;
+}
+
+.submit-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.skip-button {
+  position: fixed;
+  bottom: 2.5vw;
+  left: 3vw;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.25vw;
+  color: rgb(184, 184, 184);
+}
+
+.next-button {
+  position: fixed;
+  bottom: 2.5vw;
+  right: 3vw;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5vw;
+}
+
+.date {
+  opacity: 0;
+  transition: opacity 2s ease-in-out 2s;
+  font-size: 1.25em;
+  text-align: center;
+  color: #36cdff;
+}
+
+.date.fade-in {
+  opacity: 1;
 }
