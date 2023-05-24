@@ -40,4 +40,4 @@ Create your own `.env` file with the respective API keys so that when we push to
 
 Create your own branch if you are working on it don't push directly to main branch or it will mess it up
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
