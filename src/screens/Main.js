@@ -6,6 +6,7 @@ import { markdown } from '@codemirror/lang-markdown'; // Import the language mod
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { Button } from '@nextui-org/react';
 
 
   function Main() {
@@ -95,22 +96,22 @@ import axios from 'axios';
               <h2>Left Sidebar</h2>
               <p>This is the left sidebar content.</p>
             </div>
-            <button className="sidebar-left-toggle" onClick={toggleLeftSidebar}>
+            <Button auto className="sidebar-left-toggle" onClick={toggleLeftSidebar}>
               <FontAwesomeIcon icon={faBars} />
-            </button>
+            </Button>
           </div>
           <div className = "editor-container" id="editor-container" >
             <div id="editor" ref={editorRef}></div>
           </div>
           <div className={`sidebar ${rightSidebarOpen ? '' : 'sidebar-right-closed'}`}>
-            <button className="sidebar-toggle" onClick={toggleRightSidebar}>
+            <Button auto className="sidebar-toggle" onClick={toggleRightSidebar}>
               <FontAwesomeIcon icon={faBars} />
-            </button>
+            </Button>
             <div className="sidebar-content">
               <h2 className="ai-text">AI ASSISTANT</h2>
-              <button className="test" id="test-btn" onClick={aiClick}>
+              <Button auto className="test" id="test-btn" onClick={aiClick}>
                 TEST ME!
-              </button>
+              </Button>
               {completedResp && <p> {completedResp }</p>}
             </div>
           </div>

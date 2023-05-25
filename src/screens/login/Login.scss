@@ -1,0 +1,25 @@
+.body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(30, 29, 29);
+    justify-content: center;
+  }
+
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Ensures the container takes the full height of the parent */
+  }  
+  
+  .centered-text {
+    padding-bottom: 2.5%;
+ 
+    /* Add any additional styles for the centered text if needed */
+  }
+  .login-but-container {
+    padding-bottom: 1.5%;
+  }
+  

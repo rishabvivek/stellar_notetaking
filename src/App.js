@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus, faSquareMinus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { useNavigate} from 'react-router-dom';
+import { Button, Input} from '@nextui-org/react';
 library.add(faSquarePlus, faSquareMinus, faArrowRight, faSquare);
 
 function App() {
@@ -46,11 +47,15 @@ function App() {
   };
 
   const handleDeleteButtonClick = (id) => {
-    setInputBoxes(inputBoxes.filter((box) => box.id !== id));
+    if (inputBoxes.length === 1) {
+      setInputValues({ ...inputValues, [id]: '' });
+    } else {
+      setInputBoxes(inputBoxes.filter((box) => box.id !== id));
   
-    const newInputValues = { ...inputValues };
-    delete newInputValues[id];
-    setInputValues(newInputValues);
+      const newInputValues = { ...inputValues };
+      delete newInputValues[id];
+      setInputValues(newInputValues);
+    }
   };
   
 
@@ -74,22 +79,31 @@ function App() {
         <div id="custom-input" className="custom-input">
           {inputBoxes.map((box) => (
             <div className="input-box" key={box.id}>
-              <input
+              <Input
+                clearable
+                status='primary'
+                width='25vw'
                 type="text"
                 placeholder="What to do?"
                 value={inputValues[box.id]}
                 onChange={(e) => handleInputChange(box.id, e.target.value)}
+                css = {{
+                  backgroundColor: '#0080ff',
+                  // $$inputColor: '#0080ff'
+                }}
+          
               />
-              <button className="delete-button" onClick={() => handleDeleteButtonClick(box.id)}>
-                <FontAwesomeIcon icon={faSquareMinus} className="delete-icon" style={{ color: '#ff3a24' }} />
-              </button>
+              <Button auto className="delete-button" onClick={() => handleDeleteButtonClick(box.id)}>
+                <FontAwesomeIcon icon={faSquareMinus} className="delete-icon fa-lg" style={{ color: '#ff3a24' }} />
+              </Button>
             </div>
           ))}
+        <Button size='xs' className="add-button" id="add-button" onClick={handleAddButtonClick} style= {{width: '0.5vw'}}>
+          <FontAwesomeIcon icon={faSquarePlus} className="add-icon" style={{ color: '#0080ff' }} />
+        </Button>
         </div>
 
-        <button className="add-button" id="add-button" onClick={handleAddButtonClick}>
-          <FontAwesomeIcon icon={faSquarePlus} className="add-icon" style={{ color: '#0080ff' }} />
-        </button>
+        
 
         <div className="submit-buttons">
           <button className="skip-button">Skip</button>
