@@ -1,39 +1,59 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './Login.scss';
-import { Button, Input, Text } from '@nextui-org/react';
+    import React, { useState, useRef, useEffect } from 'react';
+    import './Login.scss';
+    import { Button, Input, Text } from '@nextui-org/react';
+    import Test from '../test/Test';
 
 
-  function Login() {
-   
+    function Login() {
+    
 
-    return (
-    <div className="body">
-        <div className='centered-container'>
+        return (
+        <div className="body">
 
-            <div className="centered-text">
+            <Test />
+            <div className='centered-container'>
 
-                <Text
-                h1
-                size={80}
-                css={{
-                textGradient: "45deg, $purple700 10%, $cyan800 50%",
-                }}
-                weight="bold"
-            >
-                Stellar
-            </Text>
-          
-            </div>
-            <div className='login-but-container'>
-                <Button auto className='login-btn'>Login</Button>
-            </div>
-            <div className='signup-but-container'>
-                <Button auto className='signup-btn'>Sign Up</Button>
-            </div>
+                <div className="centered-text">
+
+                    <Text
+                    h1
+                    size={80}
+                    css={{
+                    textGradient: "45deg, $purple700 10%, $cyan800 50%",
+                    }}
+                    weight="bold"
+                >
+                    Stellar
+                </Text>
             
-        </div>
-    </div>
-    );
-  }
+                </div>
+                <div className='login-but-container'>
+                    <Button auto className='login-btn'>
+                        <Text className='signup-text'
+                        h3
+                        size = "$md"
+                        css={{
+                            color:"$blue900",
+                        }}
+                        > Login</Text>
 
-  export default Login;
+                    </Button>
+                </div>
+                <div className='signup-but-container'>
+                    <Button auto className='signup-btn'>
+                        <Text className='signup-text'
+                        h3
+                        size = "$md"
+                        css={{
+                            color:"$blue900",
+                        }}
+                        > Signup</Text>
+                    </Button>
+                </div>
+                
+            </div>
+        </div>
+        );
+    }
+
+    export default Login;

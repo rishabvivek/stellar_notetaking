@@ -1,25 +1,46 @@
 .body {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-    background-color: rgb(30, 29, 29);
-    justify-content: center;
-  }
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgb(30, 29, 29);
+  justify-content: center;
+}
 
-  .centered-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100%; /* Ensures the container takes the full height of the parent */
-  }  
-  
-  .centered-text {
-    padding-bottom: 2.5%;
- 
-    /* Add any additional styles for the centered text if needed */
-  }
-  .login-but-container {
-    padding-bottom: 1.5%;
-  }
-  
+.centered-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.centered-text {
+  padding-bottom: 2.5%;
+
+  /* Add any additional styles for the centered text if needed */
+}
+
+.login-but-container,
+.signup-but-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5%;
+  margin-top: 1.5%;
+}
+
+.login-btn {
+  background-color: white;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.signup-btn {
+  background-color: white;
+}
+
+.signup-text {
+  margin-top: 0.5vw;
+}

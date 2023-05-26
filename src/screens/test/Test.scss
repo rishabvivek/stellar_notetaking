@@ -1,0 +1,39 @@
+.body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 150%;
+  }
+  
+  .rain-line {
+    position: absolute;
+    top: 0;
+    left: 0vw;
+    width: 1px;
+    height: 100%;
+    background-color: #fff; /* Set line color to white */
+    animation: rain linear infinite;
+    animation-duration: 7s; /* Adjust the duration for slower falling */
+    animation-fill-mode: forwards; /* Lines remain at the final keyframe after animation */
+    transform: translateY(-100%) translateX(-100%) rotate(-45deg); /* Lines fall diagonally from top left */
+    transform-origin: top left; /* Rotate and skew origin set to top left */
+  }
+  
+  @keyframes rain {
+    0% {
+      transform: translateY(-100%) translateX(-100%) rotate(-45deg); /* Initial transformation */
+    }
+    100% {
+      transform: translateY(100vh) translateX(100vw) rotate(-45deg); /* Final position */
+      opacity: 0; /* Lines become transparent at the end of animation */
+    }
+  }
+  

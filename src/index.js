@@ -5,7 +5,9 @@ import './index.css';
 import App from './App';
 import Main from './screens/Main';
 import Login from './screens/login/Login';
+import Test from './screens/test/Test';
 import { NextUIProvider } from '@nextui-org/react';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

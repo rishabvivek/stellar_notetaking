@@ -27,6 +27,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
+    "react-rain": "^0.0.1",
+    "react-rain-animation": "^1.0.4",
+    "react-rainfall-animation": "^1.0.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "realm": "^11.9.0"
