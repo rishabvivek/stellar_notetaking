@@ -7,6 +7,7 @@ import Main from './screens/Main';
 import Login from './screens/login/Login';
 import Test from './screens/test/Test';
 import { NextUIProvider } from '@nextui-org/react';
+import MyEditor from './screens/editor/Editor';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/main" element={<Main />} />
           <Route path="/login" element= {<Login />} />
+          <Route path="/draft" element = {<MyEditor />}/>
         </Routes>
       </Router>
     </React.StrictMode>

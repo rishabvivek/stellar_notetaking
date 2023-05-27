@@ -1,6 +1,6 @@
 .body {
     overflow: auto;
-    background-color: #def6ff;
+    background-color: #def6ff !important;
     margin: 0;
     padding: 0;
     display: flex;
@@ -52,27 +52,21 @@
     text-align: center;
   }
   
-  #editor-container {
+  .editor-container {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border: 0.1vw solid;
+
     height: 100vh;
-    background-color: #fff;
   }
   .editor-container {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
     width: 60vw;
     flex: 1;
-    justify-content: center;
+    background-color: #0388fc;
+    padding-top: 3vw;
   }
   
-  #editor {
-    flex:1;
-    width:100%;
-  }
+ 
   
   .sidebar-left-toggle {
     position: fixed;

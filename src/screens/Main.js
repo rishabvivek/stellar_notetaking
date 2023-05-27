@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Main.css';
-import { EditorState} from '@codemirror/state';
-import { EditorView, keymap, placeholder, highlightActiveLine} from '@codemirror/view';
-import { markdown } from '@codemirror/lang-markdown'; // Import the language mode you want to use
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { Button } from '@nextui-org/react';
+import { Editor, EditorState } from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
 
   function Main() {
@@ -14,8 +13,10 @@ import { Button } from '@nextui-org/react';
     const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
     const editorRef = useRef(null);
     const [completedResp, setCompletedResp] = useState("");
-
-    
+   
+    const [editorState, setEditorState] = React.useState(
+      () => EditorState.createEmpty()
+    );
 
     async function fetchData() {
       const response = await axios.post(
@@ -36,6 +37,8 @@ import { Button } from '@nextui-org/react';
 
       return response.data.choices[0].text;
     }
+
+
 
     async function aiClick() {
       try{
@@ -58,35 +61,6 @@ import { Button } from '@nextui-org/react';
       setRightSidebarOpen(!rightSidebarOpen);
     };
 
-    useEffect(() => {
-      const cmEditorState = EditorState.create({
-        doc: '',
-        extensions: [
-          keymap.of([]),
-          markdown(),
-          EditorView.lineWrapping,
-          highlightActiveLine(),
-          placeholder('Type here'), // Add the language mode extension here
-        ],
-    
-
-      });
-
-      const cmEditorView = new EditorView({
-        state: cmEditorState,
-        parent: editorRef.current,
-      });
-
-
-    
-
-      // Use editor instance as needed
-
-      // Cleanup on unmount
-      return () => {
-        cmEditorView.destroy();
-      };
-    }, []);
 
     return (
       <div className="body">
@@ -100,8 +74,10 @@ import { Button } from '@nextui-org/react';
               <FontAwesomeIcon icon={faBars} />
             </Button>
           </div>
-          <div className = "editor-container" id="editor-container" >
-            <div id="editor" ref={editorRef}></div>
+          <div className='editor-container'>
+            <div className='editor-wrapper'>
+              <Editor editorState={editorState} onChange={setEditorState} />
+            </div>
           </div>
           <div className={`sidebar ${rightSidebarOpen ? '' : 'sidebar-right-closed'}`}>
             <Button auto className="sidebar-toggle" onClick={toggleRightSidebar}>
