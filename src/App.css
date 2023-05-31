@@ -7,7 +7,7 @@
   background-color: transparent;
 }
 
-.body {
+.body-todo {
   overflow: auto;
   background-color: #def6ff;
   display: flex;

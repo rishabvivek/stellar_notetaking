@@ -68,7 +68,7 @@ function App() {
   };
 
   return (
-      <div className="body">
+      <div className="body-todo">
         <div className="title-bar"></div>
         <p className="title fade-in">Start Your Day Right!</p>
 

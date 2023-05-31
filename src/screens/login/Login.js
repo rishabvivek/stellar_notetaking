@@ -2,14 +2,27 @@
     import './Login.scss';
     import { Button, Input, Text } from '@nextui-org/react';
     import Test from '../test/Test';
+    import { GoogleLogin } from '@react-oauth/google';
+    import { useNavigate} from 'react-router-dom';
 
 
     function Login() {
+        let navigate = useNavigate();
+
+        const responseMessage = (response) => {
+            console.log(response);
+            navigate('/');
+
+
+        };
+        const errorMessage = (error) => {
+            console.log(error);
+        };
     
 
         return (
         <div className="body">
-
+            <div className='glowing-circle'></div>
             <Test />
             <div className='centered-container'>
 
@@ -19,36 +32,20 @@
                     h1
                     size={80}
                     css={{
-                    textGradient: "45deg, $purple700 10%, $cyan800 50%",
+                    textGradient: "45deg, $purple500 30%, $blue500 60%",
                     }}
                     weight="bold"
-                >
+                >   
                     Stellar
                 </Text>
             
                 </div>
                 <div className='login-but-container'>
-                    <Button auto className='login-btn'>
-                        <Text className='signup-text'
-                        h3
-                        size = "$md"
-                        css={{
-                            color:"$blue900",
-                        }}
-                        > Login</Text>
-
-                    </Button>
-                </div>
-                <div className='signup-but-container'>
-                    <Button auto className='signup-btn'>
-                        <Text className='signup-text'
-                        h3
-                        size = "$md"
-                        css={{
-                            color:"$blue900",
-                        }}
-                        > Signup</Text>
-                    </Button>
+                    <GoogleLogin 
+                        onSuccess={responseMessage}
+                        onError={errorMessage}
+                        shape = "pill" />
+                    
                 </div>
                 
             </div>
