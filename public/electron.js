@@ -22,7 +22,7 @@ function startPage() {
     },
     show: false // add show option
   });
-  startWindow.loadURL('http://localhost:3000/')
+  startWindow.loadURL('http://localhost:3000/login')
   startWindow.webContents.openDevTools();
   startWindow.once('ready-to-show', () => { // wait for the window to be ready before maximizing
     startWindow.maximize();
