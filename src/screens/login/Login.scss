@@ -48,28 +48,3 @@
   margin-top: 0.5vw;
 }
 
-.glowing-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200%;
-  height: 200%;
-  border-radius: 50%;
-  background: rgba(0, 0, 255, 0.5);
-  filter: blur(30px);
-  animation: glowing 3s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes glowing {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
